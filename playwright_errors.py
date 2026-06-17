@@ -8,18 +8,18 @@ with sync_playwright() as playwright:
     # Переходим на страницу входа
     page.goto(
         "https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login",
-        wait_until='networkidle'
-        )
-
+        wait_until="networkidle" # Ждем завершения сетевых запросов
+    )
+    # Пытаемся проверить, что несуществующий локатор виден на странице
     # unknow = page.locator('#unknow')
     # expect(unknow).to_be_visible()
 
+    # Пытаемся ввести текст в кнопку Login
     # login_button = page.get_by_test_id("login-page-login-button")
     # login_button.fill("unknow")
 
-    page.evaluate(
-        """
+    # Пытаемся изменить текст заголовка
+    page.evaluate("""
              const title = document.getElementById('authentication-ui-course-title-text')
              title.textContent = 'New Text'
-        """
-        )
+        """)
