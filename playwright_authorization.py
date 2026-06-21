@@ -1,9 +1,9 @@
 # Импорт Playwright для синхронного режима и проверки
 from playwright.sync_api import sync_playwright, expect
 
-# Запуск Playwright в синхронном режиме
+
 with sync_playwright() as playwright:
-    # Открываем браузер Chromium (не в headless режиме, чтобы видеть действия)
+    
     browser = playwright.chromium.launch(headless=False)
     page = browser.new_page()
 
